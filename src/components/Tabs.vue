@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="tab_left">
       <span>
-        item
+        {{ itemsLength }}item
       </span>
     </div>
     <div class="tab_content">
@@ -15,8 +15,8 @@
       </span>
     </div>
     <div class="tab_right">
-      <span @click="clear()">
-        clear
+      <span @click="clearCompleted">
+        clear completed
       </span>
     </div>
   </div>
@@ -29,6 +29,10 @@
       act:{
         type:String,
         required: true
+      },
+      todos:{
+        type:Array,
+        required:true
       }
     },
     data:() => ({
@@ -38,9 +42,20 @@
         'completed'
       ]
     }),
+    computed:{
+      itemsLength(todo){
+        return this.todos.filter(todo =>!todo.completed).length
+        // return this.todos.filter(function(todo){
+        //   return !todo.completed
+        // }).length
+      }
+    },
     methods:{
-      clear(){
-
+      toggle(tab){
+        this.$emit('toggle',tab)
+      },
+      clearCompleted(){
+        this.$emit('clear')
       }
     }
   }
@@ -61,10 +76,17 @@
     font-size: 20px;
     cursor: pointer;
   }
+  .tab_content{
+    display: flex;
+  }
   .tab_content span{
+    display: block;
+    flex-grow: 1;
     margin: 0 10px;
+    padding: 0 5px;
   }
   .tab_content .actived{
-    border: 1px solid #fff;
+    background: #dc3545;
+    border-radius: 0 35px 10px 0;
   }
 </style>

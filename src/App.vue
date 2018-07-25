@@ -19,7 +19,7 @@ export default {
   margin: 0;padding: 0;
 }
 #app{
-  height: 100vh;
+  min-height: 100vh;
   background: url("./assets/1.jpg") no-repeat;
   background-size: cover;
   opacity: .7;
