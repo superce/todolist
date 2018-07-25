@@ -63,13 +63,14 @@
 
 <style scoped>
   .footer{
-    margin: 0 40px;
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     background:rgba(0,0,0,.5);
     border-radius: 20px;
     line-height: 50px;
-    padding: 0 20px;
+    padding: 0 30px;
   }
   .footer span{
     color:#fff;
@@ -82,8 +83,7 @@
   .tab_content span{
     display: block;
     flex-grow: 1;
-    margin: 0 10px;
-    padding: 0 5px;
+    padding: 0 20px;
   }
   .tab_content .actived{
     background: #dc3545;

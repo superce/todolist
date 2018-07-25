@@ -18,10 +18,14 @@ export default {
 *{
   margin: 0;padding: 0;
 }
-#app{
-  min-height: 100vh;
-  background: url("./assets/1.jpg") no-repeat;
+body{
+  height: 100%;
+  background: url("./assets/1.jpg");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   opacity: .7;
 }
+
 </style>
